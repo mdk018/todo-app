@@ -35,7 +35,7 @@ function App() {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Enter a task..."
+          placeholder="Add a task..."
         />
         <button onClick={addTask}>Add</button>
       </div>
