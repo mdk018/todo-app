@@ -106,3 +106,36 @@ button:hover {
     margin-top: 5px;
   }
 }
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  border-top: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.marquee-text {
+  display: inline-block;
+  white-space: nowrap;
+  animation: scroll-left 12s linear infinite;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.kaif-text {
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #0a58ca;
+}

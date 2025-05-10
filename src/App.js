@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import { useEffect } from 'react';
-
 
 function App() {
   const [tasks, setTasks] = useState(() => {
     const stored = localStorage.getItem('tasks');
     return stored ? JSON.parse(stored) : [];
   });
-    const [input, setInput] = useState('');
+  const [input, setInput] = useState('');
 
   const addTask = () => {
     if (input.trim() !== '') {
@@ -25,10 +23,17 @@ function App() {
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
-  
 
+  // ✅ Keep return inside this App function!
   return (
     <div className="app">
+      {/* Scrolling Message */}
+      <div className="marquee-container">
+        <p className="marquee-text">
+          This website is built by <strong className="kaif-text">Mohammad Kaif</strong>
+        </p>
+      </div>
+
       <h1>📝 To-Do List</h1>
       <div className="input-container">
         <input
@@ -50,7 +55,6 @@ function App() {
           </li>
         ))}
       </ul>
-
     </div>
   );
 }
