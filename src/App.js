@@ -51,7 +51,6 @@ function App() {
         ))}
       </ul>
 
-      //remote
     </div>
   );
 }
